@@ -1,0 +1,475 @@
+/*
+BEM 设计模式
+
+模块（没有前缀，多个单词用 - 连接）
+元素（元素在模块之后，可以有多个层级，以 __ 连接）
+修饰（某元素、或者某模块特别的状态，必须有一个状态名和状态值，使用 _ 链接）
+
+*/
+
+
+/*清除样式*/
+body {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+h2,h3 {
+	margin: 0;
+	padding: 0;
+}
+
+/*头部样式*/
+.header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 3;
+	height: 60px;
+	width: 100%;
+}
+.header__logo {
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	left: 10px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
+	color: #ffffff;
+	text-indent: 50px;
+	cursor: pointer;
+	background: url(../img/logo.png) left no-repeat;
+}
+.header__logo:hover {
+	color: #eb1831;
+}
+.header__nav {
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	padding: 10 0;
+	right: 30px;
+	height: 40px;
+	font-size: 12px;
+}
+.header__nav__item-i-1,
+.header__nav__item-i-2,
+.header__nav__item-i-3,
+.header__nav__item-i-4,
+.header__nav__item-i-5 {
+	height: 40px;
+	line-height: 40px;
+	color: #ffffff;
+	float: left;
+	font-size: 12px;
+	text-align: center;
+	padding-left: 40px;
+}
+.header__nav__tiem_active {
+	color: #f01400 !important;
+}
+
+
+.header__nav__item-study {
+	height: 40px;
+	line-height: 40px;
+	color: #ffffff;
+	float: left;
+	font-size: 12px;
+	text-align: center;
+	margin-left: 40px;
+	width: 96px;
+	background: #f01400;
+	border-radius: 3px;
+}
+.header__nav__item-study:hover {
+	background: #a41508;
+}
+.header__active {
+	width: 48px;
+	height: 2px;
+	background-color: #f01400;
+	position: absolute;
+	left: 40px;
+	bottom: 0;
+	transition: all 0.5s;
+}
+
+
+/*第一屏*/
+.screen__1 {
+	height: 640px;
+	background: url(../img/sc1.jpg) center no-repeat;
+	background-size: cover;
+
+}
+.screen__1__wrap {
+	width: 1200px;
+	margin: 0 auto;
+}
+.screen__1__wrap__heading {
+	padding: 240px 0 33px 0;
+	color: #ffffff;
+	font-size: 42px;
+	line-height: 42px;
+	text-align: center;
+}
+.screen__1__wrap__subheading {
+	color: #ffffff;
+	font-size: 16px;
+	text-align: center;
+	line-height: 16px;
+}
+
+/*第二屏*/
+.screen__2 {
+	height: 640px;
+	background: url(../img/sc2.png) bottom center no-repeat;
+	position: relative;
+	overflow: hidden;
+}
+.screen__2__heading {
+	padding-top: 90px;
+	color: #07111b;
+	font-size: 42px;
+	line-height: 42px;
+	text-align: center;
+	position: relative;
+}
+.screen__2__heading:after {
+	content: '';
+	position: absolute;
+	bottom: -48px;
+	left: 50%;
+	margin-left: -25px;
+	width: 50px;
+	height: 2px;
+	background: #ff0000;
+}
+.screen__2__subheading {
+	padding-top: 63px;
+	color: #07111b;
+	font-size: 16px;
+	text-align: center;
+	line-height: 21px;
+
+}
+.screen__2__man {
+	width: 275px;
+	height: 380px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -137.5px;
+	background: url(../img/sc2-1.png) left no-repeat;
+	z-index: 2;
+}
+.screen__2__rocket {
+	width: 266px;
+	height: 205px;
+	position: absolute;
+	bottom: 100px;
+	left: 50%;
+	margin-left: -34px;
+	background: url(../img/sc2-2.png) left no-repeat;
+	z-index: 1;
+}
+
+
+/*第三屏*/
+.screen__3 {
+	height: 640px;
+	background: #2b333b;
+	position: relative;
+}
+.screen__3__react {
+	width: 567px;
+	height: 630px;
+	background: url(../img/sc3.png) left no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	left: 0px;
+	top: 5px;
+}
+
+.screen__3__wrap {
+	position: absolute;
+	right: 370px;
+	top: 0;
+	height: 640px;
+	width: 524px;
+	overflow: hidden;
+}
+
+.screen__3__wrap__heading {
+	padding-top: 229px;
+	color: #ffffff;
+	font-size: 42px;
+	line-height: 42px;
+	text-align: left;
+	position: relative;
+	right: 0;
+}
+.screen__3__wrap__heading:after {
+	content: '';
+	position: absolute;
+	bottom: -48px;
+	left: 0;
+	width: 50px;
+	height: 3px;
+	background: #ff0000;
+}
+.screen__3__wrap__subheading {
+	padding-top: 63px;
+	color: #ffffff;
+	font-size: 16px;
+	text-align: left;
+	line-height: 21px;
+}
+.screen__3__wrap__lanwrap {
+	position: absolute;
+	bottom: 48px;
+	left: 0;
+	padding-left: 4px;
+}
+.screen__3__wrap__lanwrap__item {
+	float: left;
+	width: 58px;
+	height: 58px;
+	margin-right: 36px;
+	border: 5px solid white;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 10px;
+	line-height: 58px;
+}
+.screen__3__wrap__lanwrap__item-i-1 {
+	color: #1ca4ff;
+	border-color: #1ca4ff78;
+}
+.screen__3__wrap__lanwrap__item-i-2 {
+	color: #7888fd;
+	border-color: #7888fd80;
+}
+.screen__3__wrap__lanwrap__item-i-3 {
+	color: #ff584c;
+	border-color: #ff584c82;
+}
+.screen__3__wrap__lanwrap__item-i-4 {
+	color: #29abe5;
+	border-color: #29abe582;
+}
+.screen__3__wrap__lanwrap__item-i-5 {
+	color: #909e41;
+	border-color: #909e4185;
+}
+
+
+/*第四屏*/
+.screen__4 {
+	height: 640px;
+}
+
+.screen__4__wrap {
+	width: 1200px;
+	height: 640px;
+	margin: 0 auto;
+}
+.screen__4__wrap__heading {
+	padding-top: 90px;
+	color: #07111b;
+	font-size: 42px;
+	line-height: 42px;
+	text-align: center;
+	position: relative;
+}
+.screen__4__wrap__heading:after {
+	content: '';
+	position: absolute;
+	bottom: -48px;
+	left: 50%;
+	margin-left: -25px;
+	width: 50px;
+	height: 2px;
+	background: #ff0000;
+}
+.screen__4__wrap__subheading {
+	padding-top: 63px;
+	color: #07111b;
+	font-size: 16px;
+	text-align: center;
+	line-height: 21px;
+}
+.screen__4__wrap__item {
+	margin-top: 80px;
+	width: 1200px;
+}
+.screen__4__wrap__item-i-1,
+.screen__4__wrap__item-i-2,
+.screen__4__wrap__item-i-3,
+.screen__4__wrap__item-i-4 {
+	width: 162px;
+	height: 131px;
+	float: left;
+	margin: 0 68px;
+}
+.screen__4__wrap__head {
+	width: 80px;
+	height: 80px;
+	margin: 0 41px;
+}
+.screen__4__wrap__foot {
+	margin-top: 30px;
+	font-size: 16px;
+	color: #07111b;
+	text-align: center;
+}
+.screen__4__wrap__head-1 {
+	background: url(../img/sc4-1.png) left no-repeat;
+}
+.screen__4__wrap__head-2 {
+	background: url(../img/sc4-2.png) left no-repeat;
+	/*background-size: 80px 70px;*/
+}
+.screen__4__wrap__head-3 {
+	background: url(../img/sc4-3.png) left no-repeat;
+	/*background-size: 80px 70px;*/
+}
+.screen__4__wrap__head-4 {
+	background: url(../img/sc4-4.png) left no-repeat;
+	/*background-size: 80px 70px;*/
+}
+
+/*第五屏幕*/
+.screen__5 {
+	height: 640px;
+	background: url(../img/sc5.jpg) center no-repeat;
+	background-size: cover;
+}
+.screen__5__wrap {
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+.screen__5__wrap__head {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	margin-left: -100px;
+	background: url(../img/sc5-1.png) left no-repeat;
+}
+.screen__5__wrap__heading {
+	padding-top: 355px;
+	color: #ffffff;
+	font-size: 42px;
+	line-height: 42px;
+	text-align: center;
+	position: relative;
+}
+.screen__5__wrap__heading:after {
+	content: '';
+	position: absolute;
+	bottom: -48px;
+	left: 50%;
+	margin-left: -25px;
+	width: 50px;
+	height: 2px;
+	background: #ffffff;
+}
+.screen__5__wrap__subheading {
+	padding-top: 63px;
+	color: #ffffff;
+	font-size: 16px;
+	text-align: center;
+	line-height: 21px;
+}
+
+
+
+
+
+
+/*其他*/
+.other {
+	height: 200px;
+	position: relative;
+}
+.other__study {
+	width: 238px;
+	height: 58px;
+	line-height: 58px;
+	font-size: 18px;
+	display: block;
+	position: absolute;
+	border: 1px solid #707070;
+	color: #381941;
+	text-align: center;
+	top: 70px;
+	left: 50%;
+	margin-left: -120px;
+	border-radius: 3px;
+}
+.other__study:hover {
+	color: #f01400;
+}
+
+
+/*脚部*/
+.footer {
+	height: 106px;
+	background-color: #000000;
+	position: relative;
+}
+
+.footer__wrap {
+	width: 690px;
+	position: absolute;
+	top: 33px;
+	left: 50%;
+	margin-left: -336px;
+}
+.footer__wrap_item {
+	display: inline-block;
+	color: #c8cdd2;
+	font-size: 12px;
+	margin: 0 17px;
+}
+.footer__wrap_item:hover {
+	color: #f01400;
+}
+.footer__wrap p {
+	margin-top: 13px;
+	text-align: center;
+	font-size: 17px;
+	color: #b2c3c7a1;
+}
+
+/*右边固定导航*/
+.nav-right {
+	width: 36px;
+	height: 120px;
+	position: fixed;
+	right: 0;
+	top: 50%;
+	margin-top: -60px;
+	background: #ffffff;
+	box-shadow: 0 0 5px #c5bfbf;
+}
+.nav-right .nav_right_item {
+	display: block;
+	width: 36px;
+	height: 12px;
+	line-height: 12px;
+	font-size: 12px;
+	padding: 6px 0;
+	text-align: center;
+	color: #000000;
+}
+.nav-right_active {
+	color: #f01400 !important;
+}
